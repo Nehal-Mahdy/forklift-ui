@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Product card transition animations */
+.product-enter-active,
+.product-leave-active {
+  transition: all 0.5s ease;
+}
+
+.product-enter-from {
+  opacity: 0;
+  transform: scale(0.8) translateY(30px);
+}
+
+.product-leave-to {
+  opacity: 0;
+  transform: scale(0.8) translateY(-30px);
+}
+
+.product-move,
+.product-enter-active,
+.product-leave-active {
+  transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* Ensure smooth layout transitions */
+.product-leave-active {
+  position: absolute;
+  width: calc(100% - 30px);
+}
+
+/* Responsive widths for leave transitions */
+@media (min-width: 768px) {
+  .product-leave-active {
+    width: calc(50% - 15px);
+  }
+}
+
+@media (min-width: 1024px) {
+  .product-leave-active {
+    width: calc(25% - 22.5px);
+  }
+}
+
+/* Filter chip animations */
+.filter-chip-enter-active,
+.filter-chip-leave-active {
+  transition: all 0.3s ease;
+}
+
+.filter-chip-enter-from,
+.filter-chip-leave-to {
+  opacity: 0;
+  transform: scale(0.8);
+}
+
+/* Smooth opacity transitions for content changes */
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
